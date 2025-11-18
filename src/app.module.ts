@@ -8,6 +8,9 @@ import { ProjectService } from './project/project.service';
 import { ProjectController } from './project/project.controller';
 import { ProjectModule } from './project/project.module';
 import { BugModule } from './bug/bug.module';
+import { BugController } from './bug/bug.controller';
+import { UserService } from './user/user.service';
+import { BugService } from './bug/bug.service';
 
 @Module({
   imports: [
@@ -25,7 +28,7 @@ import { BugModule } from './bug/bug.module';
     ProjectModule,
     BugModule,
   ],
-  controllers: [AppController, UserController, ProjectController],
-  providers: [AppService, ProjectService],
+  controllers: [AppController, UserController, ProjectController, BugController],
+  providers: [AppService, ProjectService, UserService, BugService],
 })
 export class AppModule {}
