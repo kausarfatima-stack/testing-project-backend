@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { BugController } from './bug.controller';
 import { BugService } from './bug.service';
-import { ProjectService } from 'src/project/project.service';
-import { UserService } from 'src/user/user.service';
+import { ProjectModule } from 'src/project/project.module';
+import { UserModule } from 'src/user/user.module';
+import { Bug } from 'src/entities/bug.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   controllers: [BugController],
   providers: [BugService],
-  imports: [ProjectService, UserService],
+  imports: [ProjectModule, UserModule, TypeOrmModule.forFeature([Bug])],
 })
 export class BugModule {}

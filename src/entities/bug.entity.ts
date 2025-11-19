@@ -20,7 +20,7 @@ export class Bug {
     status: string;
 
     @Column()
-    screenShot: File;
+    screenShot: string;
 
     @Column()
     deadline: string;

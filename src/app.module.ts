@@ -11,6 +11,9 @@ import { BugModule } from './bug/bug.module';
 import { BugController } from './bug/bug.controller';
 import { UserService } from './user/user.service';
 import { BugService } from './bug/bug.service';
+import { User } from './entities/user.entity';
+import { Project } from './entities/project.entity';
+import { Bug } from './entities/bug.entity';
 
 @Module({
   imports: [
@@ -21,6 +24,7 @@ import { BugService } from './bug/bug.service';
       password: 'NewPassword123',
       username: 'postgres',
       database: 'postgres',
+      entities: [User, Project, Bug],
       synchronize: true,
       logging: true,
     }),
@@ -28,7 +32,7 @@ import { BugService } from './bug/bug.service';
     ProjectModule,
     BugModule,
   ],
-  controllers: [AppController, UserController, ProjectController, BugController],
-  providers: [AppService, ProjectService, UserService, BugService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

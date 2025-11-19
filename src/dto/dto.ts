@@ -15,7 +15,7 @@ export class BugDto {
     title: string;
     desc: string;
     deadline: string;
-    screenshot: File;
+    screenshot: string;
     type: string;
     status: string;
     creator: number;
